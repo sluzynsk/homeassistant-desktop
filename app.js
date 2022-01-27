@@ -401,7 +401,7 @@ const createMainWindow = (show = false) => {
     show: false,
     skipTaskbar: true,
     autoHideMenuBar: true,
-    frame: false,
+    frame: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
