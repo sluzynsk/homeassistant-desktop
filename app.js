@@ -339,7 +339,7 @@ const getMenu = () => {
     {
       label: "Open on github.com",
       click: () => {
-        shell.openExternal("https://github.com/mrvnklm/homeassistant-desktop");
+        shell.openExternal("https://github.com/sluzynsk/homeassistant-desktop");
       },
     },
     {
@@ -402,6 +402,7 @@ const createMainWindow = (show = false) => {
     skipTaskbar: true,
     autoHideMenuBar: true,
     frame: true,
+    icon: `${__dirname}/assets/IconWin.png`,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
