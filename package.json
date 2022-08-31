@@ -5,14 +5,12 @@
     "url": "https://github.com/sluzynsk/homeassistant-desktop"
   },
   "version": "1.5.0",
-  "description": "Desktop App (Windows / macOS / Linux) for Home Assistant built with Electron",
+  "description": "Desktop App (Windows / Linux) for Home Assistant built with Electron",
   "main": "app.js",
   "scripts": {
     "start": "electron app.js",
-    "build-mac-arm64": "electron-builder build --mac --arm64 --publish never",
     "build-linux-arm64": "electron-builder build --linux appimage --arm64 --publish never",
     "build-win-arm64": "electron-builder build --win --arm64 --publish never",
-    "build-mac-x64": "electron-builder build --mac --x64 --publish never",
     "build-linux-x64": "electron-builder build --linux appimage --x64 --publish never",
     "build-linux-deb-x64": "electron-builder build --linux deb --x64 --publish never",
     "build-win-x64": "electron-builder build --win --x64 --publish never",

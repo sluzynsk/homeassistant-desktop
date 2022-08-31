@@ -1,12 +1,13 @@
 # Home Assistant - Desktop
 
-Desktop App (Windows / macOS / Linux) for [Home Assistant](https://www.home-assistant.io/) built with [Electron](https://www.electronjs.org)
+Linux/Windows Desktop App for [Home Assistant](https://www.home-assistant.io/) built with [Electron](https://www.electronjs.org)
 
 Marvin seems to have moved on from this project; he's removed the repository. This fork is
-my attempt to keep it working and make some changes to make it work properly on newer operating
-systems.
+my attempt to keep it working and make some changes to make it work better. I've removed the build for MacOS as those users are better served by using the official app:
 
-![Home Assistant - Desktop](https://raw.githubusercontent.com/mrvnklm/homeassistant-desktop/master/media/screenshot.png)
+- MacOS: [Home Assistant for MacOS](https://apps.apple.com/us/app/home-assistant/id1099568401)
+
+![Home Assistant - Desktop](https://raw.githubusercontent.com/sluzynsk/homeassistant-desktop/master/media/screenshot.png)
 
 ## Installation
 
@@ -27,6 +28,7 @@ Just download the latest version for your platform from the [release section](ht
 - added fullscreen mode
 - added arm64 builds (experimental)
 - updated electron to v20 + dependencies
+- moved to electron-forge because it is easier to build mulitple output types with it
 - work to make Linux build work better on GNOME 42, have proper icons, etc.
 
 ## Notes
