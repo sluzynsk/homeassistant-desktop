@@ -8,13 +8,9 @@
   "description": "Desktop App (Windows / Linux) for Home Assistant built with Electron",
   "main": "app.js",
   "scripts": {
-    "start": "electron app.js",
-    "build-linux-arm64": "electron-builder build --linux appimage --arm64 --publish never",
-    "build-win-arm64": "electron-builder build --win --arm64 --publish never",
-    "build-linux-x64": "electron-builder build --linux appimage --x64 --publish never",
-    "build-linux-deb-x64": "electron-builder build --linux deb --x64 --publish never",
-    "build-win-x64": "electron-builder build --win --x64 --publish never",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "author": "Steve Luzynski <steve@luzynski.net> (https://github.com/sluzynsk)",
   "homepage": "https://github.com/sluzynsk/homeassistant-desktop",
@@ -22,16 +18,47 @@
   "dependencies": {
     "auto-launch": "^5.0.5",
     "bonjour": "^3.5.0",
+    "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^8.0.1",
     "electron-traywindow-positioner": "^1.1.0",
     "electron-updater": "^4.3.9"
   },
   "devDependencies": {
-    "electron": "^20.1.0",
-    "electron-builder": "^23.3.3"
+    "@electron-forge/cli": "^6.0.0-beta.65",
+    "@electron-forge/maker-deb": "^6.0.0-beta.65",
+    "@electron-forge/maker-snap": "^6.0.0-beta.65",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.65",
+    "@electron-forge/plugin-electronegativity": "^6.0.0-beta.65",
+    "electron": "^20.1.0"
   },
   "build": {
     "appId": "com.electron.homeassistant-desktop",
     "productName": "Home Assistant"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "homeassistant_desktop"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "options": {
+              "maintainer": "Steve Luzynski <steve@luzynski.net",
+              "homepage": "https://www.luzynski.com"
+            }
+          }
+        },
+        {
+          "name": "@electron-forge/maker-snap",
+          "config": {}
+        }
+      ]
+    }
   }
 }
